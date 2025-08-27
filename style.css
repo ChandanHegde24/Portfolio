@@ -1,30 +1,32 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* prevent overflow */
 }
-
 
 body {
     background-color: rgb(5, 5, 50);
     color: white;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
+/* ---------------- NAV ---------------- */
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     position: fixed;
     top: 0%;
     width: 100%;
     height: 80px;
     background-color: rgb(53, 27, 111);
+    padding: 0 20px;
+    z-index: 1000;
 }
 
 nav img {
-    justify-content: left;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 nav ul {
@@ -34,12 +36,13 @@ nav ul {
 
 nav ul li {
     list-style: none;
-    margin: 0 23px;
+    margin: 0 15px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: antiquewhite;
+    transition: all 0.2s ease-in-out;
 }
 
 nav ul li a:hover {
@@ -51,84 +54,178 @@ nav ul li a:hover {
     font-size: 1.6rem;
 }
 
+/* ---------------- SECTIONS ---------------- */
 .firstsection {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 100px 0;
-
+    margin: 120px 0 50px 0; /* account for fixed navbar */
+    flex-wrap: wrap; /* allow wrap for small screens */
+    padding: 0 20px;
 }
 
-.firstsection>div {
+.firstsection > div {
     width: 40%;
+    min-width: 280px;
 }
 
 .leftsection {
     font-size: 3rem;
+    line-height: 1.2;
 }
 
 .rightsection img {
-    width: 85%;
-    margin: 50px 0;
+    width: 100%;
+    max-width: 400px;
+    margin: 30px 0;
 }
 
-.purple {
+.purple, #element {
     color: rgb(144, 72, 211);
 }
 
-#element {
-    color: rgb(144, 72, 211);
-}
-
+/* About Section */
 .secondsection {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    max-width: 80vw;
+    max-width: 90vw;
     margin: auto;
+    flex-wrap: wrap;
+    padding: 40px 20px;
 }
 
-.secondsection>div {
-   width: 40%;
-}
-.aboutleft img{
-    width: 85%;
-    margin: 50px 0;
-}
-.aboutright{
-    font-size: 1.5rem;
-}
-
-main hr {
-    margin: 40px 84px;
-    border: 0;
-    height: 1.2px;
-    border-top: 1px solid #6ff0ee;
-}
-
-.contact {
-    color: rgb(93, 98, 239);
-
+.secondsection > div {
+    width: 45%;
+    min-width: 280px;
     text-align: center;
 }
 
+.aboutleft img {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px 0;
+}
+
+.aboutright {
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+/* Separators */
+main hr {
+    margin: 40px auto;
+    border: 0;
+    height: 1.2px;
+    border-top: 1px solid #6ff0ee;
+    max-width: 85vw;
+}
+
+/* Contact */
+.contact {
+    color: rgb(93, 98, 239);
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 20px;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 10px;
 }
 
-.social-icons a {
-    list-style-type: none;
-    margin: 0;
+.social-icons {
     padding: 0;
-    margin: 10px;
-    text-decoration: none;
 }
 
 .social-icons li {
     display: inline;
+    list-style: none;
+}
+
+.social-icons a {
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.4rem;
+    transition: all 0.3s ease-in-out;
 }
 
 .social-icons a:hover {
     opacity: 0.5;
+}
+
+/* ---------------- MEDIA QUERIES ---------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .leftsection {
+        font-size: 2.5rem;
+    }
+    .aboutright {
+        font-size: 1.3rem;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .firstsection {
+        flex-direction: column-reverse; /* text above image */
+        text-align: center;
+    }
+
+    .firstsection > div {
+        width: 90%;
+    }
+
+    .leftsection {
+        font-size: 2rem;
+    }
+
+    .secondsection {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .secondsection > div {
+        width: 90%;
+    }
+
+    .aboutright {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    nav img {
+        width: 50px;
+        height: 50px;
+    }
+    .leftsection {
+        font-size: 1.6rem;
+    }
+    .aboutright {
+        font-size: 1rem;
+    }
+    .contact {
+        font-size: 1.1rem;
+    }
 }

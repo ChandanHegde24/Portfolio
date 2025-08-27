@@ -1,45 +1,97 @@
 body {
     font-family: Arial, sans-serif;
     background-color: rgb(238, 240, 243); 
-}
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 50%;
-  }
-  
-  td, th {
-    border: 1px solid;
-    text-align: left;
-    padding: 8px;
-  }
-  
-.container{
-    background-color: antiquewhite;
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;
-}
-.myDiv{
-    background-color: rgb(234, 205, 168);
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;
-}
-.myDiv2{
-    background-color: rgb(170, 135, 90);
-    padding-top: 50px;
-    padding-right: 30px;
-    padding-bottom: 50px;
-    padding-left: 80px;
-}
-header {
-    text-align: center;
-    padding: 5px;
+    margin: 0;
+    padding: 0;
 }
 
-table, th, td {
+/* Table styling */
+table {
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;  /* make table full-width on smaller screens */
+    max-width: 800px; /* restrict max size for readability on large screens */
+    margin: auto; /* center align */
+}
+
+td, th {
     border: 1px solid rgb(113, 7, 7);
+    text-align: left;
+    padding: 8px;
+    word-wrap: break-word; /* long texts don't overflow */
+}
+
+.container {
+    background-color: antiquewhite;
+    padding: 50px 30px; /* shorthand */
+    max-width: 1200px;
+    margin: auto; /* center container */
+}
+
+.myDiv {
+    background-color: rgb(234, 205, 168);
+    padding: 50px 30px;
+}
+
+.myDiv2 {
+    background-color: rgb(170, 135, 90);
+    padding: 50px 30px;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+}
+
+/* -------- Responsive Styles -------- */
+@media (max-width: 1024px) {
+    .container, .myDiv, .myDiv2 {
+        padding: 30px 20px;  /* reduce padding on tablets */
+    }
+    table {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    td, th {
+        padding: 6px;
+        font-size: 14px;
+    }
+    .container, .myDiv, .myDiv2 {
+        padding: 20px 15px;
+    }
+    table {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    table, thead, tbody, th, td, tr {
+        display: block;  /* convert table to stacked layout */
+        width: 100%;
+    }
+
+    th {
+        display: none;  /* hide table header on small screens */
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        padding: 10px;
+        border: 1px solid rgb(113, 7, 7);
+    }
+
+    td::before {
+        content: attr(data-label); /* add label dynamically from HTML */
+        font-weight: bold;
+        flex: 1;
+        padding-right: 10px;
+    }
+
+    .container, .myDiv, .myDiv2 {
+        padding: 15px 10px;
+    }
 }
