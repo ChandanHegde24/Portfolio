@@ -1,0 +1,456 @@
+/* ================================================
+:ROOT - GLOBAL DESIGN VARIABLES
+================================================
+*/
+:root {
+    --dark-bg: rgb(5, 5, 50);
+    --nav-bg: rgb(18, 18, 68); /* Slightly different from main BG */
+    --card-bg: rgb(25, 25, 80); /* Background for tables/cards */
+    --text-main: #F5F5F5;
+    --text-secondary: #a9a9a9;
+    --highlight-primary: rgb(144, 72, 211);
+    --highlight-secondary: #6ff0ee;
+    --font-main: 'Poppins', sans-serif;
+}
+
+/* ================================================
+GLOBAL & TYPOGRAPHY
+================================================
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    color: var(--highlight-primary);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--highlight-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-main);
+}
+
+main hr {
+    margin: 40px auto;
+    border: 0;
+    height: 1.2px;
+    border-top: 1px solid var(--highlight-secondary);
+    max-width: 85vw;
+}
+
+/* ================================================
+NAVIGATION (SHARED)
+================================================
+*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--nav-bg);
+    padding: 0 20px;
+    z-index: 1000;
+    border-bottom: 1px solid var(--highlight-primary);
+}
+
+nav img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Make logo round */
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-main);
+    transition: all 0.2s ease-in-out;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--highlight-primary);
+    font-size: 1.05rem;
+}
+
+.left {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+/* ================================================
+MAIN SECTIONS (SHARED)
+================================================
+*/
+main {
+    padding-top: 100px; /* Account for fixed 80px navbar + 20px space */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.firstsection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.firstsection > div {
+    width: 40%;
+    min-width: 280px;
+}
+
+.leftsection {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.rightsection img {
+    width: 100%;
+    max-width: 400px;
+    margin: 30px 0;
+}
+
+.purple, #element {
+    color: var(--highlight-primary);
+}
+
+/* About Section */
+.secondsection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 90vw;
+    margin: auto;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    gap: 30px;
+}
+
+.secondsection > div {
+    width: 45%;
+    min-width: 280px;
+}
+
+.aboutleft img {
+    width: 100%;
+    max-width: 350px;
+    margin: 20px 0;
+    border-radius: 15px;
+    border: 2px solid var(--highlight-secondary);
+}
+
+.aboutright {
+    font-size: 1.2rem; /* Adjusted for better readability */
+    text-align: left;
+}
+
+/* ================================================
+RESUME PAGE STYLES
+================================================
+*/
+.resume-section {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid var(--highlight-primary);
+}
+
+.resume-section h2 {
+    border-bottom: 2px solid var(--highlight-secondary);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.resume-section h3 {
+    color: var(--highlight-secondary);
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.resume-section ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.resume-section li {
+    margin-bottom: 8px;
+}
+
+/* Resume Page Table */
+table {
+    width: 100%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background-color: var(--nav-bg);
+    border: 1px solid var(--highlight-secondary);
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+td, th {
+    border: 1px solid var(--highlight-secondary);
+    text-align: left;
+    padding: 12px 15px;
+}
+
+th {
+    background-color: rgba(111, 240, 238, 0.1); 
+    font-weight: 600;
+}
+
+/* Project Cards for Resume Page */
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.project-card {
+    background-color: var(--nav-bg);
+    border: 1px solid var(--highlight-secondary);
+    border-radius: 8px;
+    padding: 20px;
+    flex-basis: 400px;
+    flex-grow: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(111, 240, 238, 0.2);
+}
+.project-card h4 {
+    color: var(--highlight-primary);
+    margin-bottom: 10px;
+}
+.project-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+.project-card p strong {
+    color: var(--text-main);
+}
+
+/* ================================================
+CONTACT & FOOTER (SHARED)
+================================================
+*/
+.contact {
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 20px;
+}
+
+.contact p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.contact img {
+    width: 32px;
+    height: 32px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--nav-bg);
+    margin-top: 40px;
+    border-top: 1px solid var(--highlight-primary);
+    color: var(--text-secondary);
+}
+
+.social-icons {
+    padding: 0;
+    margin-top: 15px;
+}
+
+.social-icons li {
+    display: inline;
+    list-style: none;
+}
+
+.social-icons a {
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.4rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+/* ================================================
+MEDIA QUERIES
+================================================
+*/
+/* Tablets */
+@media (max-width: 1024px) {
+    .leftsection {
+        font-size: 2.5rem;
+    }
+    .aboutright {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        position: relative; /* No longer fixed on mobile */
+    }
+    
+    main {
+        padding-top: 20px; /* No longer need space for fixed nav */
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .firstsection {
+        flex-direction: column-reverse; /* text above image */
+        text-align: center;
+    }
+
+    .firstsection > div {
+        width: 90%;
+    }
+
+    .leftsection {
+        font-size: 2rem;
+    }
+
+    .secondsection {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .secondsection > div {
+        width: 90%;
+    }
+
+    .aboutright {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    /* Responsive Resume Table */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead {
+        display: none; /* Hide headers */
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid var(--highlight-secondary);
+        border-radius: 8px;
+    }
+
+    td {
+        display: flex;
+        justify-content: flex-end; /* Aligns value to the right */
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        border-bottom: 1px dotted var(--highlight-primary);
+    }
+    
+    td:last-child {
+        border-bottom: none;
+    }
+
+    td::before {
+        /* This adds the "label" (e.g., "Qualification") */
+        content: attr(data-label); 
+        font-weight: bold;
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        color: var(--highlight-secondary);
+        text-align: left;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+    nav img {
+        width: 50px;
+        height: 50px;
+    }
+    .leftsection {
+        font-size: 1.6rem;
+    }
+    .aboutright {
+        font-size: 1rem;
+    }
+    .contact {
+        font-size: 1.1rem;
+    }
+    
+    .contact p {
+        flex-direction: column;
+    }
+}
