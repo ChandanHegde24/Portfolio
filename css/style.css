@@ -2,6 +2,22 @@
 :root {
     --accent-color: #00aaff;
     --accent-hover: #0088cc;
+    
+    /* Dark mode (default) */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --border-color: #2e2e2e;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a3a3a3;
+}
+
+/* Light mode */
+body.light-mode {
+    --bg-primary: #f9fafb;
+    --bg-secondary: #ffffff;
+    --border-color: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
 }
 
 body.theme-blue {
@@ -27,6 +43,32 @@ body.theme-pink {
 body.theme-orange {
     --accent-color: #f97316;
     --accent-hover: #ea580c;
+}
+
+/* Apply mode colors to Tailwind classes */
+.bg-dark-bg {
+    background-color: var(--bg-primary) !important;
+    transition: background-color 0.3s ease;
+}
+
+.bg-card-bg {
+    background-color: var(--bg-secondary) !important;
+    transition: background-color 0.3s ease;
+}
+
+.border-border-color {
+    border-color: var(--border-color) !important;
+    transition: border-color 0.3s ease;
+}
+
+.text-primary-text {
+    color: var(--text-primary) !important;
+    transition: color 0.3s ease;
+}
+
+.text-secondary-text {
+    color: var(--text-secondary) !important;
+    transition: color 0.3s ease;
 }
 
 /* Apply accent color to all elements with !important to override Tailwind */
@@ -100,19 +142,25 @@ button.hover\:bg-accent-hover:hover {
     }
 }
 
-/* Basic scrollbar styling for a modern look */
+/* Scrollbar styling */
 ::-webkit-scrollbar {
     width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: var(--bg-primary);
+    transition: background 0.3s ease;
 }
+
 ::-webkit-scrollbar-thumb {
-    background: #2e2e2e;
+    background: var(--border-color);
     border-radius: 4px;
+    transition: background 0.3s ease;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--text-secondary);
+    transition: background 0.3s ease;
 }
 
 /* Class for animations */
