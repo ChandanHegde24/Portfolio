@@ -348,15 +348,23 @@
                         </div>
                     </div>
                     
-                    <div class="flex items-center gap-x-4 rounded-xl border border-border-color bg-card-bg p-5">
-                        <div class="flex-shrink-0 rounded-lg bg-accent/10 p-3">
-                            <svg class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.211-.998-.552-1.348l-3.675-3.675a2.25 2.25 0 00-3.182 0l-1.921 1.921c-.45.45-1.02.73-1.616.73s-1.166-.28-1.616-.73l-4.47-4.47c-.45-.45-.73-1.02-.73-1.616s.28-1.166.73-1.616l1.921-1.921a2.25 2.25 0 000-3.182L5.139 2.802a2.25 2.25 0 00-1.348-.552H2.25A2.25 2.25 0 000 4.5v2.25z" />
-                            </svg>
+                    <div class="phone-contact-card group flex items-center gap-x-4 rounded-xl border border-border-color bg-card-bg p-5 transition-all duration-300 hover:border-accent hover:shadow-lg hover:shadow-accent/20 cursor-pointer">
+                        <div class="flex-shrink-0 relative">
+                            <div class="absolute inset-0 rounded-lg bg-accent/20 blur-md group-hover:blur-lg transition-all duration-300"></div>
+                            <div class="relative rounded-lg bg-accent/10 p-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                <svg class="h-6 w-6 text-accent group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.211-.998-.552-1.348l-3.675-3.675a2.25 2.25 0 00-3.182 0l-1.921 1.921c-.45.45-1.02.73-1.616.73s-1.166-.28-1.616-.73l-4.47-4.47c-.45-.45-.73-1.02-.73-1.616s.28-1.166.73-1.616l1.921-1.921a2.25 2.25 0 000-3.182L5.139 2.802a2.25 2.25 0 00-1.348-.552H2.25A2.25 2.25 0 000 4.5v2.25z" />
+                                </svg>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-primary-text">Phone</h3>
-                            <a href="tel:+916362095126" class="text-secondary-text transition-colors hover:text-accent">+91 63620 95126</a>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-primary-text group-hover:text-accent transition-colors duration-300">Phone</h3>
+                            <a href="tel:+916362095126" class="text-secondary-text transition-colors hover:text-accent font-medium">+91 63620 95126</a>
+                        </div>
+                        <div class="hidden group-hover:block">
+                            <svg class="h-5 w-5 text-accent animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.5 4.06c0-1.336-1.616-2.256-2.73-1.72L5.9 5.698C4.561 6.348 3.844 7.645 4.21 8.9l.213.741a6.118 6.118 0 00.511 1.33l2.526 5.052a6 6 0 002.625 2.627l5.052 2.526a6.118 6.118 0 001.33.511l.741.213c1.255.357 2.552-.36 3.305-1.7l1.652-2.87c.536-1.114-.384-2.73-1.72-2.73h-1.335a6.001 6.001 0 00-5.305 3.128M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
                         </div>
                     </div>
                 </div>
