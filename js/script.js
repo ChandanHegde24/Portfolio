@@ -62,4 +62,65 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // 5. Color Theme Selector with multiple color values
+    const colorThemeBtn = document.getElementById('color-theme-btn');
+    const colorMenu = document.getElementById('color-menu');
+    const colorOptions = document.querySelectorAll('.color-option');
+
+    const themeColors = {
+        blue: { main: '#00aaff', hover: '#0088cc' },
+        purple: { main: '#a855f7', hover: '#9333ea' },
+        green: { main: '#10b981', hover: '#059669' },
+        pink: { main: '#ec4899', hover: '#db2777' },
+        orange: { main: '#f97316', hover: '#ea580c' }
+    };
+
+    if (colorThemeBtn && colorMenu) {
+        // Toggle color menu
+        colorThemeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            colorMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!colorThemeBtn.contains(e.target) && !colorMenu.contains(e.target)) {
+                colorMenu.classList.add('hidden');
+            }
+        });
+
+        // Handle color theme selection
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const theme = option.getAttribute('data-theme');
+                applyTheme(theme);
+                colorMenu.classList.add('hidden');
+            });
+        });
+    }
+
+    // Apply theme function with CSS variables
+    function applyTheme(theme) {
+        const colors = themeColors[theme] || themeColors.blue;
+        
+        // Remove all theme classes
+        document.body.classList.remove('theme-blue', 'theme-purple', 'theme-green', 'theme-pink', 'theme-orange');
+        
+        // Add new theme class
+        document.body.classList.add(`theme-${theme}`);
+        
+        // Set CSS custom properties on root
+        document.documentElement.style.setProperty('--accent-color', colors.main);
+        document.documentElement.style.setProperty('--accent-hover', colors.hover);
+        
+        // Save to localStorage
+        localStorage.setItem('preferred-theme', theme);
+        
+        console.log(`Theme changed to ${theme}:`, colors);
+    }
+
+    // Load saved theme on page load
+    const savedTheme = localStorage.getItem('preferred-theme') || 'blue';
+    applyTheme(savedTheme);
 });

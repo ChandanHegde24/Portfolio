@@ -68,6 +68,41 @@
                 <a href="#contact" class="hidden rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-accent-hover md:block">
                     Contact Me
                 </a>
+
+                <div class="relative">
+                    <button id="color-theme-btn" class="hidden rounded-full border border-border-color bg-card-bg px-4 py-2.5 transition-colors hover:bg-border-color md:block">
+                        <svg class="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5" />
+                            <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m6.08 0l4.24 4.24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+                        </svg>
+                    </button>
+                    
+                    <div id="color-menu" class="hidden absolute right-0 top-14 w-48 rounded-xl border border-border-color bg-card-bg/95 p-4 backdrop-blur-lg shadow-xl z-50">
+                        <p class="text-xs font-semibold text-secondary-text mb-3">Theme Colors</p>
+                        <div class="space-y-2">
+                            <button class="color-option w-full flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-primary-text transition-colors hover:bg-border-color" data-theme="blue">
+                                <span class="h-4 w-4 rounded-full" style="background-color: #00aaff;"></span>
+                                Blue (Default)
+                            </button>
+                            <button class="color-option w-full flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-primary-text transition-colors hover:bg-border-color" data-theme="purple">
+                                <span class="h-4 w-4 rounded-full" style="background-color: #a855f7;"></span>
+                                Purple
+                            </button>
+                            <button class="color-option w-full flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-primary-text transition-colors hover:bg-border-color" data-theme="green">
+                                <span class="h-4 w-4 rounded-full" style="background-color: #10b981;"></span>
+                                Green
+                            </button>
+                            <button class="color-option w-full flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-primary-text transition-colors hover:bg-border-color" data-theme="pink">
+                                <span class="h-4 w-4 rounded-full" style="background-color: #ec4899;"></span>
+                                Pink
+                            </button>
+                            <button class="color-option w-full flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-primary-text transition-colors hover:bg-border-color" data-theme="orange">
+                                <span class="h-4 w-4 rounded-full" style="background-color: #f97316;"></span>
+                                Orange
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 
                 <button id="mobile-menu-btn" class="text-primary-text transition-transform hover:scale-110 md:hidden">
                     <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
