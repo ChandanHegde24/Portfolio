@@ -342,15 +342,23 @@
             
             <div class="mt-20 grid grid-cols-1 gap-8 md:grid-cols-2">
                 <div class="space-y-6">
-                    <div class="flex items-center gap-x-4 rounded-xl border border-border-color bg-card-bg p-5">
-                        <div class="flex-shrink-0 rounded-lg bg-accent/10 p-3">
-                            <svg class="h-6 w-6 text-accent" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91A2.25 2.25 0 012.25 6.993V6.75" />
-                            </svg>
+                    <div class="phone-contact-card group flex items-center gap-x-4 rounded-xl border border-border-color bg-card-bg p-5 transition-all duration-300 hover:border-accent hover:shadow-lg hover:shadow-accent/20 cursor-pointer">
+                        <div class="flex-shrink-0 relative">
+                            <div class="absolute inset-0 rounded-lg bg-accent/20 blur-md group-hover:blur-lg transition-all duration-300"></div>
+                            <div class="relative rounded-lg bg-accent/10 p-3 group-hover:bg-accent/20 transition-colors duration-300">
+                                <svg class="h-6 w-6 text-accent group-hover:scale-110 transition-transform duration-300 group-hover:animate-pulse" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91A2.25 2.25 0 012.25 6.993V6.75" />
+                                </svg>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-lg font-semibold text-primary-text">Email</h3>
-                            <a href="mailto:chandanhegde2003@gmail.com" class="text-secondary-text transition-colors hover:text-accent">chandanhegde2003@gmail.com</a>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-primary-text group-hover:text-accent transition-colors duration-300">Email</h3>
+                            <a href="mailto:chandanhegde2003@gmail.com" class="text-secondary-text transition-colors hover:text-accent font-medium">chandanhegde2003@gmail.com</a>
+                        </div>
+                        <div class="hidden group-hover:block">
+                            <svg class="h-5 w-5 text-accent animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91A2.25 2.25 0 012.25 6.993V6.75" />
+                            </svg>
                         </div>
                     </div>
                     
