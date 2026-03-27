@@ -77,10 +77,9 @@
                 </button>
 
                 <div class="relative">
-                    <button id="color-theme-btn" class="hidden rounded-full border border-border-color bg-card-bg px-4 py-2.5 transition-colors hover:bg-border-color md:block">
-                        <svg class="h-5 w-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="5" />
-                            <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m6.08 0l4.24-4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m6.08 0l4.24 4.24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" />
+                    <button id="color-theme-btn" class="hidden rounded-full border border-border-color bg-card-bg px-4 py-2.5 transition-colors hover:bg-border-color md:block" title="Change theme color">
+                        <svg class="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
                         </svg>
                     </button>
                     
@@ -107,6 +106,12 @@
                                 <span class="h-4 w-4 rounded-full" style="background-color: #f97316;"></span>
                                 Orange
                             </button>
+                            <label class="w-full flex items-center gap-3 rounded-lg px-4 py-3 text-sm font-medium text-primary-text transition-colors hover:bg-border-color cursor-pointer hover:bg-border-color">
+                                <div class="relative h-4 w-4 rounded-full overflow-hidden" style="background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);">
+                                    <input type="color" id="custom-color-picker" class="absolute -top-2 -left-2 h-8 w-8 opacity-0 cursor-pointer" value="#00aaff" title="Choose Custom Color">
+                                </div>
+                                Custom Color
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -349,7 +354,7 @@ I am a Computer Science engineering student proficient in Web Development and Cl
                 <img src="https://raw.githubusercontent.com/ChandanHegde24/ChandanHegde24/output/github-contribution-grid-snake.svg" 
                      alt="GitHub Contribution Snake Game" 
                      class="max-w-full h-auto min-w-[700px]"
-                     onerror="this.onerror=null; this.src='https://ghchart.rshah.org/00aaff/ChandanHegde24'">
+                     onerror="this.onerror=null; this.src='https://ghchart.rshah.org/40c463/ChandanHegde24'">
             </div>
         </section>
 

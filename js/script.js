@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorThemeBtn = document.getElementById('color-theme-btn');
     const colorMenu = document.getElementById('color-menu');
     const colorOptions = document.querySelectorAll('.color-option');
+    const customColorPicker = document.getElementById('custom-color-picker');
 
     const themeColors = {
         blue: { main: '#00aaff', hover: '#0088cc' },
@@ -127,14 +128,51 @@ document.addEventListener('DOMContentLoaded', function () {
                 colorMenu.classList.add('hidden');
             });
         });
+
+        if (customColorPicker) {
+            customColorPicker.addEventListener('input', (e) => {
+                const hexColor = e.target.value;
+                applyCustomTheme(hexColor);
+            });
+            // Keep menu open when interacting with color picker
+            customColorPicker.parentElement.parentElement.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
+    }
+
+    // Helper to darken color slightly for hover state
+    function adjustColor(color, amount) {
+        return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
+    }
+
+    // Apply custom theme
+    function applyCustomTheme(hexColor) {
+        document.body.classList.remove('theme-blue', 'theme-purple', 'theme-green', 'theme-pink', 'theme-orange', 'theme-custom');
+        document.body.classList.add('theme-custom');
+        
+        const hoverColor = adjustColor(hexColor, -20); // Darken by roughly 20 units
+        
+        document.documentElement.style.setProperty('--accent-color', hexColor);
+        document.documentElement.style.setProperty('--accent-hover', hoverColor);
+        
+        localStorage.setItem('preferred-theme', 'custom');
+        localStorage.setItem('custom-theme-color', hexColor);
     }
 
     // Apply theme function with CSS variables
     function applyTheme(theme) {
+        if (theme === 'custom') {
+            const savedCustom = localStorage.getItem('custom-theme-color') || '#00aaff';
+            applyCustomTheme(savedCustom);
+            if (customColorPicker) customColorPicker.value = savedCustom;
+            return;
+        }
+
         const colors = themeColors[theme] || themeColors.blue;
         
         // Remove all theme classes
-        document.body.classList.remove('theme-blue', 'theme-purple', 'theme-green', 'theme-pink', 'theme-orange');
+        document.body.classList.remove('theme-blue', 'theme-purple', 'theme-green', 'theme-pink', 'theme-orange', 'theme-custom');
         
         // Add new theme class
         document.body.classList.add(`theme-${theme}`);
