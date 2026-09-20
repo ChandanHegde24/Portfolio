@@ -210,3 +210,99 @@ a[aria-label="Facebook"]:hover {
     transform: scale(1.2) translateY(-5px);
     filter: drop-shadow(0 0 12px var(--accent-color));
 }
+
+p{
+    text-align: justify;
+}
+
+/* Project cards */
+.projects-section {
+    position: relative;
+}
+
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--accent-color);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.section-kicker::before {
+    width: 1.75rem;
+    height: 1px;
+    background: var(--accent-color);
+    content: '';
+}
+
+.projects-section > div:last-child,
+.projects-section > div:nth-child(3) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+}
+
+.projects-section > div:last-child {
+    margin-top: 1.25rem;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+}
+
+.projects-section > div:nth-child(3) > div,
+.projects-section > div:last-child > div {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    padding: 2rem;
+    border-color: color-mix(in srgb, var(--border-color) 85%, var(--accent-color));
+    background: linear-gradient(145deg, var(--bg-secondary), color-mix(in srgb, var(--bg-secondary) 88%, var(--accent-color)));
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.16);
+}
+
+.projects-section > div:last-child > div {
+    width: calc(50% - 1.25rem);
+}
+
+.projects-section > div:nth-child(3) > div:hover,
+.projects-section > div:last-child > div:hover {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 1.5rem 3rem color-mix(in srgb, var(--accent-color) 14%, transparent);
+}
+
+.projects-section h3 {
+    max-width: 22rem;
+    line-height: 1.2;
+}
+
+.projects-section p {
+    text-align: left;
+}
+
+.projects-section > div:nth-child(3) > div > div:last-child,
+.projects-section > div:last-child > div > div:last-child {
+    margin-top: auto;
+    padding-top: 1.5rem;
+}
+
+.projects-section span.rounded-full {
+    border: 1px solid color-mix(in srgb, var(--accent-color) 24%, transparent);
+    background: color-mix(in srgb, var(--accent-color) 10%, transparent);
+}
+
+@media (max-width: 767px) {
+    .projects-section > div:last-child,
+    .projects-section > div:nth-child(3) {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-section > div:nth-child(3) > div,
+    .projects-section > div:last-child > div {
+        padding: 1.5rem;
+    }
+
+    .projects-section > div:last-child > div {
+        width: 100%;
+    }
+}
