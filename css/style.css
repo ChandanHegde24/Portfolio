@@ -11,6 +11,26 @@
     --text-secondary: #a3a3a3;
 }
 
+body {
+  /* Hide the default mouse cursor */ 
+  cursor: none;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #aec19e;
+  border-radius: 50%; /* Makes it a circle */
+  position: fixed;
+  transform: translate(-50%, -50%); /* Centers the circle on the pointer tip */
+  pointer-events: none; /* Prevents the custom cursor from blocking clicks */
+  transition: transform 0.1s ease-out; /* Optional: adds a smooth follow effect */
+  z-index: 9999; /* Keeps it on top of all other elements */
+}
+
 /* Light mode */
 body.light-mode {
     --bg-primary: #f9fafb;

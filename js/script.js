@@ -1,3 +1,23 @@
+const cursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
+// Expand circle on hover
+document.querySelectorAll('a, button').forEach(link => {
+  link.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    cursor.style.background = 'rgba(0, 0, 0, 0.1)';
+  });
+  
+  link.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    cursor.style.background = 'transparent';
+  });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     
     // 1. Typed.js Initialization
